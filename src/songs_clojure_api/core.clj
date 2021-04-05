@@ -23,11 +23,22 @@
           (pp/pprint req)
           (str "Request object: " req))})
 
+; Request with parameters
+(defn give-name [req]
+  {:status 200
+   :headers {"Content-Type" "text/html"}
+   :body (->
+          (pp/pprint req)
+          (str "Your name is " (:name (:params req))))})
+
+; ROUTES
 (defroutes app-routes
   (GET "/" [] simple-body-page)
+  (GET "/name" [] give-name)
   (GET "/request" [] request-example)
   (route/not-found "Page not found!"))
 
+; MAIN
 (defn -main
   "Perros y gatos"
   [& args]
