@@ -5,7 +5,7 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  ; Compojure - Routing
-                 [compojure "1.6.1"]
+                 [compojure "1.6.2"]
                  ; HTTP lib for client/server
                  [http-kit "2.3.0"]
                  ; Ring defaults - query params
